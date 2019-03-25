@@ -8,7 +8,7 @@ const expense = new Schema({
     year: Number,
     details: String,
     amount: Number,
-    paymentType: {
+    expenseType: {
         type: String,
         enum: ['credit', 'debit']
     },
