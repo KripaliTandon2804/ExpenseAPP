@@ -1,4 +1,4 @@
-const dbExpenses = require('../models/expense')
+const dbExpense = require('../models/expense')
 const dbLimits = require('../models/limit')
 
 exports.totalExpenditure = (req, res) => {
@@ -32,7 +32,7 @@ exports.totalExpenditure = (req, res) => {
                     limitAmount = element.amount
                 }
             });
-            dbExpenses.find({ createdBy: req.decoded.email, month: currentMonth, year: currentYear, status: { $ne: -1 } }, (err, expenses) => {
+            dbExpense.find({ createdBy: req.decoded.email, month: currentMonth, year: currentYear, status: { $ne: -1 } }, (err, expenses) => {
                 if (err) {
                     res.json({
                         success: false,

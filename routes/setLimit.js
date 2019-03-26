@@ -1,4 +1,4 @@
-const dbLimits = require('../models/monthlyLimit')
+const dbLimits = require('../models/limit')
 const val = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 exports.setLimit = (req, res) => {

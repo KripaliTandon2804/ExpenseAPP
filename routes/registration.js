@@ -7,7 +7,7 @@ exports.register = (req, res) => {
             msg: "Please enter all the details."
         })
     } else {
-        dbRegister.findOne({ $or: [{ email: req.body.email, phone: req.body.phone }] }, (err, loginData) => {
+        dbRegister.findOne({ email: req.body.email }, (err, loginData) => {
             if (err) {
                 res.json({
                     success: false,
@@ -35,7 +35,7 @@ exports.register = (req, res) => {
                 })
 
             } else {
-                dbRegister.findOneAndUpdate({ email: req.body.email }, { password: req.body.password, firstName: req.body.firstName, lastName: req.body.lastName }, (err, login) => {
+                dbRegister.findOneAndUpdate({ email: req.body.email }, { password: req.body.password, firstName: req.body.firstName, lastName: req.body.lastName, phone: req.body.phone }, (err, loginData) => {
                     if (err) {
                         res.json({
                             success: false,

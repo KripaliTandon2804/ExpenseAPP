@@ -13,4 +13,4 @@ const register = new Schema({
     lastLogin: [Date]
 })
 
-module.export = mongoose.model("Register", register)
+module.exports = mongoose.model("Register", register)

@@ -7,10 +7,11 @@ var tokenVerify = function(req, res, next) {
         //   console.log(token)
         jwt.verify(token, req.app.get('secretKey'), function(err, decoded) {
             if (err) {
-                // console.log(err)
+                console.log(err)
                 res.json({
                     success: false,
-                    msg: 'Failed to authenticate token.'
+                    msg: 'Failed to authenticate token.',
+
                 })
             } else {
                 req.decoded = decoded;

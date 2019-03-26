@@ -1,7 +1,7 @@
 const dbExpense = require('../models/expense')
 
 exports.addExpense = (req, res) => {
-    if (!req.body.amount || !req.body.month || !req.body.year) {
+    if (!req.body.amount || !req.body.expenseType || !req.body.details) {
         res.json({
             success: false,
             msg: "Please provide all the details."

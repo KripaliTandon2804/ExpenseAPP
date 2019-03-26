@@ -1,5 +1,5 @@
 var dbRegister = require('../models/register')
-const jwt = require("jsonwebtoken")
+const jwt = require('jsonwebtoken')
 
 exports.login = (req, res) => {
     if (!req.body.email || !req.body.password) {
@@ -29,7 +29,7 @@ exports.login = (req, res) => {
                     email: userData.email,
                     name: userData.name,
                     id: userData._id
-                }.req.app.get('secretKey'))
+                }, req.app.get('secretKey'))
                 res.json({
                     success: true,
                     msg: "Login successful.",

@@ -5,7 +5,7 @@ const verify = require('./tokenVerify')
 /**
  * Register using email 
  */
-const register = require('./registeration')
+const register = require('./registration')
 router.post('/register', register.register)
 
 /**
@@ -31,25 +31,25 @@ router.get('/totalExpenditure', verify, totalExpenditure.totalExpenditure)
  * Add expense
  */
 const addExpense = require('./addExpense')
-router.post('/addExpense', verify, addExpense)
+router.post('/addExpense', verify, addExpense.addExpense)
 
 /**
  * Edit Expense
  */
 const editExpense = require('./editExpense')
-router.post('/editExpense', verify, editExpense)
+router.post('/editExpense', verify, editExpense.editExpense)
 
 /**
  * Delete Expense
  */
 const deleteExpense = require('./deleteExpense')
-router.post('/deleteExpense', verify, deleteExpense)
+router.post('/deleteExpense', verify, deleteExpense.deleteExpense)
 
 /**
  * Get Expense
  */
 const getExpense = require('./getExpense')
-router.post('/getExpense', verify, getExpense)
+router.post('/getExpense', verify, getExpense.getExpense)
 
 
 module.exports = router;
